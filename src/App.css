@@ -1,42 +1,23 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+@import "tailwindcss";
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+@theme{
+    --color-bright-blue: hsl(220, 98%, 61%);
+    --color-light-blue: hsl(220, 98%, 61%);
+    --color-Very-Light-Gray: hsl(0, 0%, 98%);
+    --color-Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+    --color-Light-Grayish-Blue: hsl(233, 11%, 84%);
+    --color-Dark-Grayish-Blue: hsl(236, 9%, 61%);
+    --color-Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+    --color-gradient-from: hsl(192, 100%, 67%) ;
+    --color-gradient-to: hsl(280, 87%, 65%);
+    
+    --color-Very-Dark-Blue: hsl(235, 21%, 11%);
+    --color-Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+    --color-Light-Grayish-Blue-dark: hsl(234, 39%, 85%);
+    --color-Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+    --color-Darker-Grayish-Blue: hsl(234, 11%, 52%);
+    --color-Very-Dark-Grayish-Blue-dark: hsl(233, 14%, 35%);
+    --color-Darkest-Grayish-Blue: hsl(237, 14%, 26%);
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+    --font-josefin: "Josefin Sans", sans-serif;
 }
