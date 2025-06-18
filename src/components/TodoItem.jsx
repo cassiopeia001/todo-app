@@ -42,17 +42,19 @@ export default function TodoItem({item}){
                             aria-label={item.completed? "Mark as incomplete": "Mark as complete"}
                             aria-pressed={item.completed}>
                             
-                        { item.completed && <img className="z-20" src="/images/icon-check.svg" alt="check button"/>}
+                        { item.completed && <img className="z-20" src="/todo-app/images/icon-check.svg" alt="check button"/>}
                             
                     </button>
                     <p className={`break-words whitespace-normal min-w-0 w-full  ${item.completed ?  darkMode? "line-through text-Very-Dark-Grayish-Blue": "line-through text-Light-Grayish-Blue": darkMode? " text-Light-Grayish-Blue-dark": "text-Very-Dark-Grayish-Blue"} `}
                         {...attributes} 
-                        {...listeners} >{item.task}</p>
+                        {...listeners} 
+                        tabIndex={0}>{item.task}
+                        </p>
                 </div>
                 <button className="cursor-pointer shrink-0"
                         onClick={deleteTask}
                         aria-label="delete todo from the list">
-                    <img src="/images/icon-cross.svg" alt="delete button" />
+                    <img src="/todo-app/images/icon-cross.svg" alt="delete button" />
                 </button>
             </div>
         </li>

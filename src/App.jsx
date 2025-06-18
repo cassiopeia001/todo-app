@@ -86,8 +86,8 @@ function App() {
     <DndContext onDragEnd={handleOnDragEnd} accessibility={defaultAnnouncements}>
       <div className={`min-h-screen w-full overflow-x-hidden relative z-0 font-josefin text-lg ${darkMode ? "bg-Very-Dark-Blue": "bg-Very-Light-Gray"}`}>
         <picture className='block h-[40%] w-full -z-10 absolute inset-0'>
-          <source media="(min-width: 640px)" srcSet={`${darkMode? "/images/bg-desktop-dark.jpg": "/images/bg-desktop-light.jpg"}`}/>
-          <source media="(max-width: 640px)" srcSet={`${darkMode? "/images/bg-mobile-dark.jpg": "/images/bg-mobile-light.jpg"}`}/>
+          <source media="(min-width: 640px)" srcSet={`${darkMode? "/todo-app/images/bg-desktop-dark.jpg": "/todo-app/images/bg-desktop-light.jpg"}`}/>
+          <source media="(max-width: 640px)" srcSet={`${darkMode? "/todo-app/images/bg-mobile-dark.jpg": "/todo-app/images/bg-mobile-light.jpg"}`}/>
           <img className='w-full h-full object-cover' src="/todo-app/images/bg-desktop-light.jpg" alt="background image" />
         </picture>
         <div className='h-full w-full flex flex-col items-center justify-center px-5 z-50'>

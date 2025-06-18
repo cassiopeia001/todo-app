@@ -10,7 +10,7 @@ export default function Header(){
             <button className="cursor-pointer" 
                 onClick={()=>setDarkMode((previous)=>!previous)}
                 aria-label="switch theme to dark or light">
-                <img className="w-7 h-7" src={` ${darkMode? "/images/icon-sun.svg": "/images/icon-moon.svg"}`} alt="theme switcher" />
+                <img className="w-7 h-7" src={` ${darkMode? "/todo-app/images/icon-sun.svg": "/todo-app/images/icon-moon.svg"}`} alt="theme switcher" />
             </button>
         </header>
     )
