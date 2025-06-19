@@ -15,8 +15,6 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 - [Author](#author)
 
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -52,7 +50,7 @@ Users should be able to:
 - Mobile-first workflow
 - Accessibility
 - [React](https://reactjs.org/) - JS library
-- [dnd kit] (https://dndkit.com/) -Drag and drop toolkit for React
+- [Dndkit] (https://dndkit.com/) -Drag and drop toolkit for React
 
 ### What I learned
 
