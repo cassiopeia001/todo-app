@@ -50,7 +50,7 @@ Users should be able to:
 - Mobile-first workflow
 - Accessibility
 - [React](https://reactjs.org/) - JS library
-- [Dndkit] (https://dndkit.com/) -Drag and drop toolkit for React
+- [Dndkit](https://dndkit.com/) -Drag and drop toolkit for React
 
 ### What I learned
 
