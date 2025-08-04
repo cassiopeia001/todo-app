@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { todoContext } from '../todoContext.js';
 import { useSortable } from "@dnd-kit/sortable";
 import {CSS} from '@dnd-kit/utilities';
+import { AnimatePresence, motion } from "motion/react";
 
 export default function TodoItem({item}){
 
@@ -31,13 +32,19 @@ export default function TodoItem({item}){
     }
 
     return(
-        <li key={item.id} 
+        
+        <motion.li
+            initial={{ opacity: 0}}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0}}
+            transition={{duration: 0.2}}
+            key={item.id} 
             ref={setNodeRef} 
             style={style} 
             className='pb-3 cursor-pointer'>
             <div className="flex justify-between items-center gap-1 px-6 min-w-0">
                 <div className="flex gap-4 min-w-0">
-                    <button className={`flex items-center justify-center shrink-0 rounded-full border-[1px]  w-6 h-6 cursor-pointer hover:border-gradient-from ${item.completed ? "bg-gradient-to-r from-gradient-from to-gradient-to border-none" : "bg-none" } ${darkMode ? "border-Darkest-Grayish-Blue": "border-Light-Grayish-Blue"}`}
+                    <button className={`flex items-center justify-center shrink-0 rounded-full border-[1px]  w-6 h-6 cursor-pointer hover:border-gradient-from ${item.completed ? "bg-gradient-to-r from-gradient-from to-gradient-to border-none" : "bg-none" } ${darkMode ? "border-Darkest-Grayish-Blue": "border-Light-Grayish-Blue"} transition-colors duration-300`}
                             onClick={completeTask}
                             aria-label={item.completed? "Mark as incomplete": "Mark as complete"}
                             aria-pressed={item.completed}>
@@ -45,7 +52,7 @@ export default function TodoItem({item}){
                         { item.completed && <img className="z-20" src="/todo-app/images/icon-check.svg" alt="check button"/>}
                             
                     </button>
-                    <p className={`break-words whitespace-normal min-w-0 w-full  ${item.completed ?  darkMode? "line-through text-Very-Dark-Grayish-Blue": "line-through text-Light-Grayish-Blue": darkMode? " text-Light-Grayish-Blue-dark": "text-Very-Dark-Grayish-Blue"} `}
+                    <p className={`break-words whitespace-normal min-w-0 w-full  ${item.completed ?  darkMode? "line-through text-Very-Dark-Grayish-Blue": "line-through text-Light-Grayish-Blue": darkMode? " text-Light-Grayish-Blue-dark": "text-Very-Dark-Grayish-Blue"} transition-colors duration-300`}
                         {...attributes} 
                         {...listeners} 
                         tabIndex={0}>{item.task}
@@ -57,6 +64,6 @@ export default function TodoItem({item}){
                     <img src="/todo-app/images/icon-cross.svg" alt="delete button" />
                 </button>
             </div>
-        </li>
+        </motion.li>
     )
 }

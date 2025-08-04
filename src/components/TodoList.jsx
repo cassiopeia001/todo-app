@@ -4,6 +4,7 @@ import { todoContext } from '../todoContext.js'
 import { useState } from 'react';
 import {v4 as uuidv4} from 'uuid'
 import { SortableContext, useSortable } from '@dnd-kit/sortable';
+import { AnimatePresence, motion } from 'motion/react';
 
 export default function TodoList(){
 
@@ -45,7 +46,7 @@ export default function TodoList(){
 
     return (
         <main className='flex flex-col gap-4'>
-            <form className={`flex gap-4 items-center  py-4 px-6 rounded-md  ${darkMode? "bg-Very-Dark-Desaturated-Blue": "bg-white"}`} 
+            <form className={`flex gap-4 items-center  py-4 px-6 rounded-md  ${darkMode? "bg-Very-Dark-Desaturated-Blue": "bg-white"} transition-colors duration-300`} 
                   onSubmit={addTask}>
                     <div className='w-fit flex items-center'>
                         <div type='button' className={`rounded-full border-[1px]  w-6 h-6 ${darkMode ? "border-Darkest-Grayish-Blue": "border-Light-Grayish-Blue"}`}></div>
@@ -57,8 +58,11 @@ export default function TodoList(){
                        onChange={(e)=> setInput(e.target.value)}
                        aria-label='add a new to do'/>
             </form>
-            <ul className={`rounded-t-md flex flex-col gap-3 pt-4 divide-y  ${darkMode? "bg-Very-Dark-Desaturated-Blue divide-Very-Dark-Grayish-Blue-dark": "bg-white divide-Light-Grayish-Blue-dark"}`}>
+            <ul
+                
+                className={`rounded-t-md flex flex-col gap-3 pt-4 divide-y  ${darkMode? "bg-Very-Dark-Desaturated-Blue divide-Very-Dark-Grayish-Blue-dark": "bg-white divide-Light-Grayish-Blue-dark"}`}>
                 <SortableContext items={todoList.map((item)=> item.id)}>
+                    <AnimatePresence>
                     {
                         filteredTodos.length> 0 ?   
                         
@@ -69,10 +73,17 @@ export default function TodoList(){
                                 )) 
                                 
                                 )
-                        : (
-                            <li className="text-center text-Dark-Grayish-Blue">No Tasks To Show</li>
+                        : ( 
+                            <AnimatePresence>
+                            <motion.li
+                                initial={{opacity: 0}}
+                                animate={{opacity: 1}}
+                                exit={{opacity: 0}}
+                                className="text-center text-Dark-Grayish-Blue">No Tasks To Show</motion.li>
+                            </AnimatePresence>    
                             )
                         }
+                     </AnimatePresence>
                     </SortableContext>
                 
             </ul>
